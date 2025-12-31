@@ -43,68 +43,65 @@ export function SiteHeader() {
                 </NavigationMenuLink>
                </NavigationMenuItem>
 
+              {/* PROJECTS DROPDOWN (MEGA MENU) */}
+              <NavigationMenuItem>
+                <NavigationMenuTrigger className="cursor-pointer">Projects</NavigationMenuTrigger>
+                <NavigationMenuContent>
+                  <ul className="grid gap-3 p-6 md:w-[500px] lg:w-[750px] lg:grid-cols-[.75fr_1fr]">
+                    
+                    {/* LEFT COLUMN: Featured Project (Spans 3 rows to match right column) */}
+                    <li className="row-span-3">
+                      <div className="flex h-full flex-col justify-between gap-4">
+                        
+                        {/* Featured Card */}
+                        <NavigationMenuLink asChild>
+                          <Link
+                            className="flex flex-1 select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md border border-border/50"
+                            href="/projects/nyxus"
+                          >
+                            <div className="mb-4 aspect-video w-full rounded-md bg-background/50 border border-border/50 flex items-center justify-center text-muted-foreground/50">
+                               <Icons.gitHub className="h-8 w-8 opacity-20" />
+                            </div>
+                            
+                            <div className="mb-2 text-lg font-medium">
+                              Coven / Nocta
+                            </div>
+                            <p className="text-sm leading-tight text-muted-foreground">
+                              A Next.js 16 social platform with real-time widgets and community tools.
+                            </p>
+                          </Link>
+                        </NavigationMenuLink>
 
-{/* PROJECTS DROPDOWN (HOVER) */}
-<NavigationMenuItem>
-  <NavigationMenuTrigger>Projects</NavigationMenuTrigger>
-  <NavigationMenuContent>
-    {/* 1. WIDENED GRID CONTAINER */}
-    <ul className="grid gap-3 p-6 md:w-[500px] lg:w-[700px] lg:grid-cols-[1fr_1fr]">
-      
-      {/* LEFT COLUMN: Featured + "View All" Link */}
-      <li className="row-span-3 flex flex-col justify-between gap-4">
-        
-        {/* Featured Project Card */}
-        <NavigationMenuLink asChild>
-          <Link
-            className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md border border-border/50"
-            href="/projects/social-app"
-          >
-            {/* Placeholder Image Area */}
-            <div className="mb-4 aspect-video w-full rounded-md bg-background/50 border border-border/50 flex items-center justify-center text-muted-foreground/50">
-               <Icons.gitHub className="h-8 w-8 opacity-20" /> {/* Placeholder Icon */}
-            </div>
-            
-            <div className="mb-2 text-lg font-medium">
-              Coven / Nocta
-            </div>
-            <p className="text-sm leading-tight text-muted-foreground">
-              A Next.js 16 social platform with real-time widgets and community tools.
-            </p>
-          </Link>
-        </NavigationMenuLink>
+                        {/* View All Link (Stacked at bottom) */}
+                        <div className="space-y-2">
+                            <div className="h-px w-full bg-border/50" />
+                            <NavigationMenuLink asChild>
+                                <Link 
+                                    href="/projects" 
+                                    className="group flex items-center justify-between rounded-md px-2 py-2 text-sm font-medium text-muted-foreground hover:bg-accent hover:text-accent-foreground transition-colors"
+                                >
+                                    View All Projects
+                                    <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                                </Link>
+                            </NavigationMenuLink>
+                        </div>
+                      </div>
+                    </li>
+                    
+                    {/* RIGHT COLUMN: List Items (Direct children of grid) */}
+                    <ListItem href="/projects/shopify" title="Shopify Development" className="lg:block md:hidden">
+                      Custom Liquid themes and e-commerce optimization for high-volume stores.
+                    </ListItem>
+                    <ListItem href="/projects/games" title="Game Development" className="lg:block md:hidden">
+                      Unreal Engine 5 mechanics, C++ systems, and blueprint prototyping.
+                    </ListItem>
+                    <ListItem href="/projects/archive" title="Project Archive" className="lg:block md:hidden">
+                      Older OOP, Java, and HTML5 Canvas experiments from my early learning.
+                    </ListItem>
 
-        {/* Separator & View All Link (Stacked underneath) */}
-        <div className="space-y-2">
-            <div className="h-px w-full bg-border/50" /> {/* Separator */}
-            <NavigationMenuLink asChild>
-                <Link 
-                    href="/projects" 
-                    className="group flex items-center justify-between rounded-md px-2 py-2 text-sm font-medium text-muted-foreground hover:bg-accent hover:text-accent-foreground transition-colors"
-                >
-                    View All Projects
-                    <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-                </Link>
-            </NavigationMenuLink>
-        </div>
-      </li>
-      
-      {/* RIGHT COLUMN: List Items (Stacked normally) */}
-      <div className="flex flex-col gap-2 justify-center h-full">
-          <ListItem href="/projects/shopify" title="Shopify Development">
-            Custom Liquid themes and e-commerce optimization.
-          </ListItem>
-          <ListItem href="/projects/games" title="Game Development">
-            Unreal Engine 5 mechanics and C++ systems.
-          </ListItem>
-          <ListItem href="/projects/archive" title="Project Archive">
-            Older OOP, Java, and HTML5 Canvas experiments.
-          </ListItem>
-      </div>
-
-    </ul>
-  </NavigationMenuContent>
-</NavigationMenuItem>
+                  </ul>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
 
               {/* ABOUT LINK */}
               <NavigationMenuItem>
@@ -170,8 +167,6 @@ export function SiteHeader() {
                 {/* MOBILE: Projects (Split Link + Toggle) */}
                 <Collapsible className="w-full">
                   <div className="flex items-center justify-between font-medium">
-                    
-                    {/* 1. THE TEXT IS A REAL LINK */}
                     <Link 
                       href="/projects" 
                       onClick={() => setOpen(false)} 
@@ -179,18 +174,14 @@ export function SiteHeader() {
                     >
                       Projects
                     </Link>
-                    
-                    {/* 2. THE ARROW IS THE TOGGLE */}
                     <CollapsibleTrigger asChild>
                       <Button variant="ghost" size="sm" className="p-0 hover:bg-transparent">
                         <ChevronDown className="h-5 w-full transition-transform duration-200 group-data-[state=open]:rotate-180" />
                         <span className="sr-only">Toggle</span>
                       </Button>
                     </CollapsibleTrigger>
-                    
                   </div>
 
-                  {/* 3. THE CONTENT */}
                   <CollapsibleContent className="flex flex-col gap-2 pl-4 pb-4">
                     <Link href="/projects/social-app" onClick={() => setOpen(false)} className="text-muted-foreground hover:text-primary py-2">
                       Social App (Featured)

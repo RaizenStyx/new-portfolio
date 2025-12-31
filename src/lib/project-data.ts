@@ -29,15 +29,15 @@ export const projects: Project[] = [
   // 1. FEATURED: Social App (The Crown Jewel)
   {
     id: "social-app",
-    slug: "coven-nocta",
-    title: "Coven / Nocta",
+    slug: "nyxus",
+    title: "Nyxus - Niche Social Media App",
     shortDescription: "A modern social media application built for niche communities with real-time widgets.",
     fullDescription: "Built with Next.js 16 and Supabase, this application redefines niche community interaction. It features a custom widget system allowing users to personalize their dashboards, real-time chat functionality, and a unique 'offering' system for community engagement. The app focuses on privacy, speed, and a highly customizable user interface.",
     techStack: ["Next.js 16", "TypeScript", "Tailwind", "Supabase", "PostgreSQL"],
     category: "Web App",
     featured: true,
-    githubUrl: "https://github.com/yourusername/coven", // Update this
-    liveUrl: "https://coven-app.com", // Update this
+    githubUrl: "https://github.com/RaizenStyx/Project-Wicka",
+    liveUrl: "https://project-wicka.vercel.app/", 
   },
 
   // 2. SHOPIFY: We Are Underground (Professional Experience)
@@ -94,17 +94,17 @@ export const projects: Project[] = [
   },
 
   // 6. SHOPIFY: Hydrogen Demo
-  {
-    id: "hydrogen-demo",
-    slug: "shopify-hydrogen",
-    title: "Hydrogen Storefront",
-    shortDescription: "Headless commerce demo using Shopify's Hydrogen framework.",
-    fullDescription: "Fully functional development store built with Hydrogen (Shopify's React-based framework). This project demonstrates the future of headless commerce, utilizing server-side rendering for optimal performance.",
-    techStack: ["Shopify Hydrogen", "React", "GraphQL"],
-    category: "Shopify",
-    liveUrl: "https://hydrogenteststore.vercel.app/",
-    imageUrl: "/images/hydrogenlogo.png",
-  },
+  // {
+  //   id: "hydrogen-demo",
+  //   slug: "shopify-hydrogen",
+  //   title: "Hydrogen Storefront",
+  //   shortDescription: "Headless commerce demo using Shopify's Hydrogen framework.",
+  //   fullDescription: "Fully functional development store built with Hydrogen (Shopify's React-based framework). This project demonstrates the future of headless commerce, utilizing server-side rendering for optimal performance.",
+  //   techStack: ["Shopify Hydrogen", "React", "GraphQL"],
+  //   category: "Shopify",
+  //   liveUrl: "https://hydrogenteststore.vercel.app/",
+  //   imageUrl: "/images/hydrogenlogo.png",
+  // },
 
   // 7. GAME DEV: Prince of Daggers
   {

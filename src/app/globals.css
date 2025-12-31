@@ -116,6 +116,11 @@
   --sidebar-ring: oklch(0.556 0 0);
 }
 
+/* Override shadcn's NavigationMenuContent max-width */
+[data-radix-navigation-menu-viewport] {
+  max-width: none !important;
+}
+
 @layer base {
   * {
     @apply border-border;

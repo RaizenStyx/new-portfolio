@@ -11,6 +11,32 @@ interface ProjectPageProps {
   params: Promise<{ slug: string }>;
 }
 
+// --- HELPER FUNCTION ---
+// This finds [Text](Url) patterns and converts them to clickable links
+function renderDescription(text: string) {
+  const parts = text.split(/(\[.*?\]\(.*?\))/g);
+  
+  return parts.map((part, index) => {
+    const match = part.match(/\[(.*?)\]\((.*?)\)/);
+    
+    if (match) {
+      const [_, linkText, linkUrl] = match;
+      return (
+        <a 
+          key={index} 
+          href={linkUrl} 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          className="text-primary font-medium hover:underline underline-offset-4"
+        >
+          {linkText}
+        </a>
+      );
+    }
+    return part;
+  });
+}
+
 export default async function ProjectPage({ params }: ProjectPageProps) {
   const { slug } = await params;
   
@@ -95,7 +121,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
           <div className="prose prose-invert max-w-none">
             <h3 className="text-2xl font-bold mb-4">About the Project</h3>
             <p className="text-lg text-muted-foreground leading-loose whitespace-pre-line">
-              {project.fullDescription}
+              {renderDescription(project.fullDescription)}
             </p>
           </div>
         </div>

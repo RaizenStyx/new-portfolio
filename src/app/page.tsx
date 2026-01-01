@@ -18,30 +18,40 @@ export default function Home() {
     <main className="min-h-screen bg-background p-4 md:p-8 lg:p-12">
       
       {/* HERO SECTION: GRID LAYOUT */}
-      <section className="mb-16 mt-8 md:mt-16 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+      <section className="mb-16 mt-6 md:mt-16 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
         
-        {/* LEFT COLUMN: TEXT CONTENT */}
-        <div className="max-w-3xl z-10">
+        {/* 1. ANIMATION COLUMN */}
+        {/* Mobile: order-first (Goes to top), w-3/4 (Smaller size), mx-auto (Centered) */}
+        {/* Desktop: md:order-last (Goes to right/second column), md:w-full (Full size) */}
+        <div className="w-1/2 mx-auto md:w-full flex justify-center md:justify-end order-first md:order-last relative">
+            <HeroAnimation />
+        </div>
+
+        {/* 2. TEXT CONTENT COLUMN */}
+        {/* Mobile: Text centered */}
+        {/* Desktop: Text left-aligned */}
+        <div className="max-w-3xl z-10 text-center md:text-left">
           <h1 className="text-4xl font-extrabold tracking-tight md:text-6xl lg:text-7xl mb-6 text-foreground">
-            Building <span className="text-muted-foreground">digital</span> worlds <span className="text-muted-foreground">and scalable</span> apps.
+            Building 
+            {/* Mobile: Standard color. Desktop: Muted color. */}
+            <span className="text-foreground md:text-muted-foreground"> digital </span> 
+            worlds 
+            <br className="md:hidden" /> {/* Force break on mobile for readability */}
+            <span className="text-foreground md:text-muted-foreground"> and scalable </span> 
+            apps.
           </h1>
-          <p className="text-xl text-muted-foreground max-w-2xl leading-relaxed mb-8">
+          <p className="text-xl text-muted-foreground max-w-2xl leading-relaxed mb-8 mx-auto md:mx-0">
             I bridge the gap between complex game systems and modern web applications. 
             Specializing in <strong>Next.js</strong>, <strong>Unreal Engine</strong>, and <strong>E-commerce Architecture</strong>.
           </p>
           
-          <div className="flex gap-4">
+          <div className="flex gap-4 justify-center md:justify-start">
              <Button variant="outline" size="lg" asChild>
-               <Link href="/projects/social-app">See Latest Work</Link>
+               <Link href="/projects/nyxus">See Latest Work</Link>
              </Button>
           </div>
         </div>
 
-        {/* RIGHT COLUMN: ANIMATION */}
-        {/* On Mobile: Order-last makes it sit below text visually. */}
-        <div className="w-full flex justify-center md:justify-end order-last md:order-none relative">
-            <HeroAnimation />
-        </div>
       </section>
       
 

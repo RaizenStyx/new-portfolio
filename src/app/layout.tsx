@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { SiteHeader } from "@/components/SiteHeader";
+import { SiteFooter } from "@/components/SiteFooter";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -14,8 +15,14 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Connor Reed - Portfolio",
-  description: "Connor Reed's personal portfolio showcasing projects in web development, Shopify expertise, and game development.",
+  title: {
+    default: "Connor Reed | Full-Stack Developer",
+    template: "%s | Connor Reed",
+  },
+  description: "Portfolio of Connor Reed - Specializing in Shopify Development, Next.js Applications, and Game Development.",
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({
@@ -31,6 +38,7 @@ export default function RootLayout({
       >
         <SiteHeader />
         {children}
+        <SiteFooter />
       </body>
     </html>
   );

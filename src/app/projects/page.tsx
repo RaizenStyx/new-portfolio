@@ -1,77 +1,88 @@
-import Link from "next/link";
 import { projects } from "@/lib/project-data";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { Card, CardContent, CardFooter, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { ArrowRight, ExternalLink } from "lucide-react";
-import { Icons } from "@/components/icons";
+import Link from "next/link";
 import Image from "next/image";
+import { Button } from "@/components/ui/button";
+import { ArrowLeft } from "lucide-react";
 
 export default function ProjectsPage() {
-  // Filter out Archive for the main grid (optional)
-  const activeProjects = projects.filter(p => p.category !== "Archive");
+  const featuredProjects = projects.filter((p) => p.featured);
+  const otherProjects = projects.filter((p) => !p.featured && p.category !== "Archive");
 
   return (
-    <main className="container mx-auto min-h-screen py-12 px-4 md:px-8">
+    <div className="container py-12 px-4 md:px-6">
       
-      {/* HEADER */}
-      <div className="mb-12 space-y-4">
-        <h1 className="text-4xl font-bold tracking-tight md:text-5xl">All Projects</h1>
-        <p className="text-xl text-muted-foreground max-w-2xl">
-          A collection of my work in Web Development, Shopify E-commerce, and Game Design.
+      {/* Header */}
+      <div className="flex flex-col gap-4 mb-12">
+        <h1 className="text-4xl font-bold tracking-tight">All Projects</h1>
+        <p className="text-xl text-muted-foreground">
+          A collection of web applications, e-commerce systems, and game development experiments.
         </p>
       </div>
 
-      {/* PROJECT GRID */}
-      <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-        {activeProjects.map((project) => (
-          <Card key={project.id} className="flex flex-col h-full hover:border-primary/50 transition-colors">
-            {/* Image Placeholder */}
-            <div className="aspect-video w-full bg-muted/40 border-b flex items-center justify-center text-muted-foreground">
-                {/* Image component | TODO: Make placeholder.png image */}
-                <Image src={project.imageUrl || "/images/otherprogramming.png"} alt={project.title} width={400} height={225} className="object-cover w-full h-full" />
-            </div>
+      {/* SECTION 1: FEATURED */}
+      {featuredProjects.length > 0 && (
+        <div className="mb-16">
+          <h2 className="text-2xl font-semibold mb-6 flex items-center gap-2">
+            🔥 Featured Work
+          </h2>
+          <div className="grid gap-8 md:grid-cols-2">
+            {featuredProjects.map((project) => (
+              <ProjectCard key={project.id} project={project} priority={true} />
+            ))}
+          </div>
+        </div>
+      )}
 
-            <CardHeader>
-              <div className="flex justify-between items-start mb-2">
-                <Badge variant="outline">{project.category}</Badge>
-              </div>
-              <CardTitle className="text-xl">{project.title}</CardTitle>
-              <CardDescription className="line-clamp-2 mt-2">
-                {project.shortDescription}
-              </CardDescription>
-            </CardHeader>
-
-            <CardContent className="flex-grow">
-              <div className="flex flex-wrap gap-2">
-                {project.techStack.slice(0, 3).map((tech) => ( // Show only first 3 tags
-                  <Badge key={tech} variant="secondary" className="text-xs">
-                    {tech}
-                  </Badge>
-                ))}
-                {project.techStack.length > 3 && (
-                   <span className="text-xs text-muted-foreground self-center">+{project.techStack.length - 3} more</span>
-                )}
-              </div>
-            </CardContent>
-
-            <CardFooter className="flex gap-2 pt-4">
-              <Button asChild className="w-auto flex-1" size="lg">
-                <Link href={`/projects/${project.slug}`}>
-                  View Details <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
-              </Button>
-              {project.githubUrl && (
-                <Button variant="outline" size="icon" asChild>
-                    <Link href={project.githubUrl} target="_blank">
-                    <Icons.gitHub className="h-4 w-4" /> 
-                    </Link>
-                </Button>
-              )}
-            </CardFooter>
-          </Card>
-        ))}
+      {/* SECTION 2: OTHER PROJECTS */}
+      <div>
+        <h2 className="text-2xl font-semibold mb-6">More Projects</h2>
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+           {otherProjects.map((project) => (
+              <ProjectCard key={project.id} project={project} />
+           ))}
+        </div>
       </div>
-    </main>
+      
+    </div>
   );
+}
+
+// Helper Component to keep code clean
+function ProjectCard({ project, priority = false }: { project: any, priority?: boolean }) {
+    return (
+        <Link 
+            href={`/projects/${project.slug}`}
+            className="group relative flex flex-col overflow-hidden rounded-lg border bg-card text-card-foreground shadow-sm transition-all hover:shadow-md hover:border-primary/50"
+        >
+            <div className="relative aspect-video w-full overflow-hidden bg-muted">
+                {project.imageUrl ? (
+                    <Image
+                        src={project.imageUrl}
+                        alt={project.title}
+                        fill
+                        className="object-cover transition-transform duration-300 group-hover:scale-105"
+                        priority={priority}
+                    />
+                ) : (
+                    <div className="flex h-full items-center justify-center text-muted-foreground">No Image</div>
+                )}
+            </div>
+            <div className="flex flex-1 flex-col p-4">
+                <div className="flex justify-between items-start mb-2">
+                     <h3 className="text-xl font-semibold group-hover:underline decoration-primary decoration-2 underline-offset-4">{project.title}</h3>
+                     {/* Badge Logic could go here */}
+                </div>
+                <p className="text-muted-foreground text-sm line-clamp-2 mb-4 flex-1">
+                    {project.shortDescription}
+                </p>
+                <div className="flex flex-wrap gap-2 mt-auto">
+                    {project.techStack.slice(0, 3).map((tech: string) => (
+                        <span key={tech} className="inline-flex items-center rounded-md border px-2 py-0.5 text-xs font-semibold bg-secondary text-secondary-foreground">
+                            {tech}
+                        </span>
+                    ))}
+                </div>
+            </div>
+        </Link>
+    )
 }

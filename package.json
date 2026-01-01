@@ -1,7 +1,8 @@
 {
-  "name": "my-portfolio",
-  "version": "0.1.0",
+  "name": "connor-reed-portfolio",
+  "version": "1.0.0",
   "private": true,
+  "description": "Professional developer portfolio built with Next.js 16, TypeScript, and Tailwind CSS.",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

@@ -183,7 +183,7 @@ export function SiteHeader() {
                   </div>
 
                   <CollapsibleContent className="flex flex-col gap-2 pl-4 pb-4">
-                    <Link href="/projects/social-app" onClick={() => setOpen(false)} className="text-muted-foreground hover:text-primary py-2">
+                    <Link href="/projects/nyxus" onClick={() => setOpen(false)} className="text-muted-foreground hover:text-primary py-2">
                       Social App (Featured)
                     </Link>
                     <Link href="/projects/shopify" onClick={() => setOpen(false)} className="text-muted-foreground hover:text-primary py-2">
@@ -191,6 +191,9 @@ export function SiteHeader() {
                     </Link>
                     <Link href="/projects/games" onClick={() => setOpen(false)} className="text-muted-foreground hover:text-primary py-2">
                       Game Dev / Unreal
+                    </Link>
+                    <Link href="/projects/archive" onClick={() => setOpen(false)} className="text-muted-foreground hover:text-primary py-2">
+                      Project Archive
                     </Link>
                   </CollapsibleContent>
                 </Collapsible>

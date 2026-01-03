@@ -10,7 +10,6 @@ import { projects } from "@/lib/project-data";
 import { useState, useEffect } from "react";
 
 export function FeaturedCarousel() {
-  // 1. Get Featured projects (excluding the main 'social-app')
   const carouselProjects = projects.filter(
     (p) => p.featured && p.id !== "social-app"
   );
@@ -18,7 +17,6 @@ export function FeaturedCarousel() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
 
-  // 2. Auto-Rotation Logic (5 seconds)
   useEffect(() => {
     if (isPaused) return;
     const interval = setInterval(() => {

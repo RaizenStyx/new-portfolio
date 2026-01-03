@@ -70,8 +70,8 @@ export default function ContactPage() {
               <div>
                 <h3 className="font-semibold text-lg mb-1">Email</h3>
                 <p className="text-muted-foreground mb-2">The best way to reach me.</p>
-                <Link href="mailto:me@connorreed.dev" className="text-primary hover:underline font-medium">
-                  me@connorreed.dev
+                <Link href="mailto:me@calexreed.dev" className="text-primary hover:underline font-medium">
+                  me@calexreed.dev
                 </Link>
               </div>
             </div>
@@ -83,7 +83,7 @@ export default function ContactPage() {
               </div>
               <div>
                 <h3 className="font-semibold text-lg mb-1">Phone</h3>
-                <p className="text-muted-foreground mb-2">Mon-Fri from 11am to 8pm EST.</p>
+                <p className="text-muted-foreground mb-2">Mon-Fri from 11am to 8pm EST, text preferable.</p>
                 <Link href="tel:+14233675437" className="text-primary hover:underline font-medium">
                   +1 (423) 367-5437
                 </Link>
@@ -112,6 +112,11 @@ export default function ContactPage() {
               <Button variant="outline" size="lg" className="w-full" asChild>
                 <Link href="https://linkedin.com/in/connorreed-dev" target="_blank">
                   <Icons.linkedIn className="mr-2 h-5 w-5" /> LinkedIn
+                </Link>
+              </Button>
+              <Button variant="outline" size="lg" className="w-full" asChild>
+                <Link href="https://www.upwork.com/freelancers/~011890ee4ee1c9e2f6" target="_blank">
+                  <Icons.upwork className="mr-2 h-5 w-5" /> Upwork
                 </Link>
               </Button>
               <Button variant="outline" size="lg" className="w-full" asChild>

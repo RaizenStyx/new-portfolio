@@ -18,6 +18,7 @@ import {
 import { useState } from "react";
 import { cn } from "@/lib/utils";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
+import Image from "next/image";
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
@@ -60,11 +61,18 @@ export function SiteHeader() {
                             href="/projects/nyxus"
                           >
                             <div className="mb-4 aspect-video w-full rounded-md bg-background/50 border border-border/50 flex items-center justify-center text-muted-foreground/50">
-                               <Icons.gitHub className="h-8 w-8 opacity-20" />
+                               {/* <Icons.gitHub className="h-8 w-8 opacity-20" /> */}
+                               <Image
+                                  src="/images/nyxus.png"
+                                  alt="Nyxus Project Preview"  
+                                  width={300}
+                                  height={169}
+                                  className="object-contain"
+                                />
                             </div>
                             
                             <div className="mb-2 text-lg font-medium">
-                              Coven / Nocta
+                              Nyxus
                             </div>
                             <p className="text-sm leading-tight text-muted-foreground">
                               A Next.js 16 social platform with real-time widgets and community tools.
@@ -133,7 +141,7 @@ export function SiteHeader() {
               </Link>
             </Button>
             <Button variant="ghost" size="icon" asChild>
-              <Link href="mailto:me@connorreed.dev">
+              <Link href="mailto:me@calexreed.dev">
                 <Icons.mail className="h-6 w-6" />
               </Link>
             </Button>
@@ -211,7 +219,7 @@ export function SiteHeader() {
                     <Link href="https://www.upwork.com/freelancers/~011890ee4ee1c9e2f6" target="_blank">
                     <Icons.upwork className="h-6 w-6" />
                     </Link>
-                    <Link href="mailto:me@connorreed.dev" target="_blank">
+                    <Link href="mailto:me@calexreed.dev" target="_blank">
                     <Icons.mail className="h-6 w-6" />
                     </Link>
                     <Link href="tel:+4233675437">

@@ -69,8 +69,8 @@ export function SiteFooter() {
               </Link>
             </div>
             <div className="flex flex-col gap-2 mt-2">
-                 <Link href="mailto:me@connorreed.dev" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-                    me@connorreed.dev
+                 <Link href="mailto:me@calexreed.dev" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                    me@calexreed.dev
                  </Link>
                  <Link href="tel:+4233675437" className="text-sm text-muted-foreground hover:text-primary transition-colors">
                     +1 (423) 367-5437

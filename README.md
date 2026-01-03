@@ -45,7 +45,7 @@ Open http://localhost:3000 with your browser to see the result.
 ## 📬 Contact
 
 - **Website:** [connorreed.dev](https://connorreed.dev)
-- **Email:** [me@connorreed.dev](mailto:me@connorreed.dev)
+- **Email:** [me@connorreed.dev](mailto:me@calexreed.dev)
 - **LinkedIn:** [Connor Reed](https://linkedin.com/in/connorreed-dev)
 - **GitHub:** [RaizenStyx](https://github.com/RaizenStyx)
 

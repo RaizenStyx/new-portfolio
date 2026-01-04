@@ -217,13 +217,13 @@ export function SiteHeader() {
                      <Icons.linkedIn className="h-6 w-6 text-muted-foreground hover:text-foreground" />
                    </Link>
                     <Link href="https://www.upwork.com/freelancers/~011890ee4ee1c9e2f6" target="_blank">
-                    <Icons.upwork className="h-6 w-6" />
+                    <Icons.upwork className="h-6 w-6 text-muted-foreground hover:text-foreground" />
                     </Link>
                     <Link href="mailto:me@calexreed.dev" target="_blank">
-                    <Icons.mail className="h-6 w-6" />
+                    <Icons.mail className="h-6 w-6 text-muted-foreground hover:text-foreground" />
                     </Link>
                     <Link href="tel:+4233675437">
-                    <Icons.phone className="h-6 w-6" />
+                    <Icons.phone className="h-6 w-6 text-muted-foreground hover:text-foreground" />
                     </Link>
                 </div>
               </div>

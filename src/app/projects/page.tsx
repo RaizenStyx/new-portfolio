@@ -1,8 +1,13 @@
 import { projects } from "@/lib/project-data";
 import Link from "next/link";
 import Image from "next/image";
-import { Button } from "@/components/ui/button";
-import { ArrowLeft } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Projects",
+  description: "A showcase of my web development and game development projects.",
+};
 
 export default function ProjectsPage() {
   const featuredProjects = projects.filter((p) => p.featured);
@@ -71,6 +76,7 @@ function ProjectCard({ project, priority = false }: { project: any, priority?: b
                 <div className="flex justify-between items-start mb-2">
                      <h3 className="text-xl font-semibold group-hover:underline decoration-primary decoration-2 underline-offset-4">{project.title}</h3>
                      {/* Badge Logic could go here */}
+                     <Badge variant="secondary" className="text-sm py-1 px-3">{project.category}</Badge>
                 </div>
                 <p className="text-muted-foreground text-sm line-clamp-2 mb-4 flex-1">
                     {project.shortDescription}

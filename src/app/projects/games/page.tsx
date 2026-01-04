@@ -70,6 +70,9 @@ export default function GamesPage() {
                             {tech}
                         </span>
                     ))}
+                    <Link href={`/projects/${game.slug}`} className="ml-auto text-primary font-semibold text-sm hover:underline">
+                        Details <ArrowLeft className="inline-block h-4 w-4 transform rotate-180 ml-1" />
+                    </Link>
                 </div>
             </div>
           </div>

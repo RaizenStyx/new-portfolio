@@ -19,7 +19,7 @@ export default function ContactPage() {
     setLoading(true);
 
     const formData = new FormData(e.currentTarget);
-    formData.append("access_key", process.env.WEB3FORM_ACCESS_KEY || ""); 
+    formData.append("access_key", "4b746dab-88e4-4e3d-98a2-96263a26240d"); 
 
     try {
       const response = await fetch("https://api.web3forms.com/submit", {
@@ -198,7 +198,7 @@ export default function ContactPage() {
               {/* Bot Protection (Honeypot) - Hidden */}
               <input type="checkbox" name="botcheck" className="hidden" style={{ display: 'none' }} />
 
-              <Button type="submit" className="w-full" size="lg" disabled={loading}>
+              <Button className="w-full cursor-pointer" type="submit" size="lg" disabled={loading}>
                 {loading ? (
                   <>
                     <Loader2 className="mr-2 h-4 w-4 animate-spin" /> Sending...

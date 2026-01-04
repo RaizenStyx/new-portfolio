@@ -13,12 +13,13 @@ export default function ContactPage() {
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
 
-  // --- HANDLE SUBMIT ---
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setLoading(true);
+    
+    const form = e.currentTarget; 
 
-    const formData = new FormData(e.currentTarget);
+    const formData = new FormData(form);
     formData.append("access_key", "4b746dab-88e4-4e3d-98a2-96263a26240d"); 
 
     try {
@@ -31,7 +32,7 @@ export default function ContactPage() {
 
       if (data.success) {
         setSuccess(true);
-         e.currentTarget.reset(); 
+        form.reset(); 
       } else {
         console.error("Error:", data);
         alert("Something went wrong. Please try again.");
@@ -152,7 +153,7 @@ export default function ContactPage() {
               <p className="text-muted-foreground max-w-sm">
                 Thank you for reaching out. I will get back to you as soon as possible.
               </p>
-              <Button onClick={() => setSuccess(false)} variant="outline" className="mt-4">
+              <Button onClick={() => setSuccess(false)} variant="outline" className="mt-4 cursor-pointer w-full md:w-auto">
                 Send Another Message
               </Button>
             </div>

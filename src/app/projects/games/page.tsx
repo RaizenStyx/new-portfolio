@@ -50,7 +50,7 @@ export default function GamesPage() {
                         </div>
                     </a>
                 )}
-                {/* Overlay Play Button (Only if it has a liveUrl) */}
+                {/* Overlay GitHub Button (Only if it has a githubUrl) */}
                 {game.githubUrl && (
                     <a href={game.githubUrl} target="_blank" className="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 transition-opacity group-hover:opacity-100 backdrop-blur-[2px]">
                         <div className="flex items-center gap-2 rounded-full bg-primary px-6 py-2 font-bold text-primary-foreground shadow-lg transform scale-90 transition-transform group-hover:scale-100">

@@ -52,7 +52,7 @@ export default function ProjectsPage() {
   );
 }
 
-// Helper Component to keep code clean
+// Helper Component 
 function ProjectCard({ project, priority = false }: { project: any, priority?: boolean }) {
     return (
         <Link 

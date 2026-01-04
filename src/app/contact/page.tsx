@@ -137,13 +137,6 @@ export default function ContactPage() {
         {/* RIGHT COLUMN: CONTACT FORM */}
         <Card className="p-8">
             {/* --- DESKTOP ONLY HEADER --- */}
-            <div className="hidden md:block mb-8 space-y-2">
-                <h2 className="text-2xl font-bold">Send a Message</h2>
-                <p className="text-muted-foreground">
-                Got a technical question or a project idea? Fill out the form below 
-                and I'll get back to you within 24 hours.
-                </p>
-            </div>
           {success ? (
             <div className="flex flex-col items-center justify-center h-full text-center py-12 space-y-4 animate-in fade-in zoom-in">
               <div className="rounded-full bg-green-500/10 p-4 text-green-500">
@@ -159,6 +152,13 @@ export default function ContactPage() {
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="space-y-6">
+            <div className="hidden md:block mb-8 space-y-2">
+                <h2 className="text-2xl font-bold">Send a Message</h2>
+                <p className="text-muted-foreground">
+                Got a technical question or a project idea? Fill out the form below 
+                and I'll get back to you within 24 hours.
+                </p>
+            </div>
               <div className="grid gap-4 md:grid-cols-2">
                 <div className="space-y-2">
                   <label htmlFor="name" className="text-sm font-medium">Name</label>

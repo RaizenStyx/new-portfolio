@@ -153,7 +153,7 @@ export default function ContactPage() {
               <p className="text-muted-foreground max-w-sm">
                 Thank you for reaching out. I will get back to you as soon as possible.
               </p>
-              <Button onClick={() => setSuccess(false)} variant="outline" className="mt-4 cursor-pointer w-full md:w-auto">
+              <Button onClick={() => setSuccess(false)} variant="outline" className="mt-4 cursor-pointer w-full">
                 Send Another Message
               </Button>
             </div>

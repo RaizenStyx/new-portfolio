@@ -47,7 +47,7 @@ export default function AboutPage() {
                 </Link>
              </Button>
              <Button variant="outline" size="lg" asChild>
-                <Link href="/Resume.pdf" target="_blank">
+                <Link href="/Connor_Reed_Resume.pdf" target="_blank">
                    Download Resume <Download className="ml-2 h-4 w-4" />
                 </Link>
              </Button>

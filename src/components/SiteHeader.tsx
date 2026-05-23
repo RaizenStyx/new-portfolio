@@ -58,13 +58,12 @@ export function SiteHeader() {
                         <NavigationMenuLink asChild>
                           <Link
                             className="flex flex-1 select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md border border-border/50"
-                            href="/projects/nyxus"
+                            href="/projects/project-nebula"
                           >
                             <div className="mb-4 aspect-video w-full rounded-md bg-background/50 border border-border/50 flex items-center justify-center text-muted-foreground/50">
-                               {/* <Icons.gitHub className="h-8 w-8 opacity-20" /> */}
                                <Image
-                                  src="/images/nyxus.png"
-                                  alt="Nyxus Project Preview"  
+                                  src="/images/nebula.png"
+                                  alt="Project Nebula Preview"  
                                   width={300}
                                   height={169}
                                   className="object-contain"
@@ -72,10 +71,10 @@ export function SiteHeader() {
                             </div>
                             
                             <div className="mb-2 text-lg font-medium">
-                              Nyxus
+                              Project Nebula
                             </div>
                             <p className="text-sm leading-tight text-muted-foreground">
-                              A Next.js 16 social platform with real-time widgets and community tools.
+                              An Action-RPG built in Unreal Engine 5.5 featuring a robust C++ backend and dynamic skill progression.
                             </p>
                           </Link>
                         </NavigationMenuLink>

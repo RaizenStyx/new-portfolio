@@ -117,6 +117,12 @@ export function SiteHeader() {
                 </NavigationMenuLink>
               </NavigationMenuItem>
 
+              <NavigationMenuItem>
+                <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
+                    <Link href="/services">Services</Link>
+                </NavigationMenuLink>
+              </NavigationMenuItem>
+
             </NavigationMenuList>
           </NavigationMenu>
         </div>
@@ -206,6 +212,7 @@ export function SiteHeader() {
                 </Collapsible>
 
                 <Link href="/about" onClick={() => setOpen(false)} className="text-lg font-medium">About</Link>
+                <Link href="/services" onClick={() => setOpen(false)} className="text-lg font-medium">Services</Link>
                 <Link href="/contact" onClick={() => setOpen(false)} className="text-lg font-medium">Contact</Link>
                 
                 <div className="mt-6 flex gap-4 border-t pt-6">

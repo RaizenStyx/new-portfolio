@@ -6,9 +6,39 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Icons } from "@/components/icons";
 import { ArrowLeft, ExternalLink } from "lucide-react";
+import { Metadata } from "next";
 
 interface ProjectPageProps {
   params: Promise<{ slug: string }>;
+}
+
+// --- DYNAMIC METADATA GENERATION ---
+export async function generateMetadata({ params }: ProjectPageProps): Promise<Metadata> {
+  // 1. Await the params to get the slug
+  const { slug } = await params;
+  
+  // 2. Fetch the project (no 'await' here since your function seems to be synchronous)
+  const project = getProjectBySlug(slug); 
+
+  // 3. Fallback metadata just in case the slug doesn't match a project
+  if (!project) {
+    return {
+      title: "Project Not Found",
+      description: "This project could not be found."
+    };
+  }
+
+  // 4. Return the dynamic metadata
+  return {
+    title: `${project.title} | Connor Reed`, 
+    description: project.shortDescription, // Make sure 'shortDescription' matches your actual data object key
+    openGraph: {
+      title: project.title,
+      description: project.shortDescription,
+      // If your data object uses a different key like 'image' or 'coverUrl', replace 'thumbnailUrl' below
+      images: project.imageUrl ? [project.imageUrl] : [], 
+    },
+  };
 }
 
 // --- HELPER FUNCTION ---

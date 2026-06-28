@@ -22,14 +22,17 @@ export default function Home() {
           </p>
           <div className="flex gap-4 justify-center md:justify-start">
              <Button variant="outline" size="lg" asChild>
-               <Link href="/projects/nyxus">See Latest Work</Link>
+               <Link href="/projects/project-nebula">See Latest Work</Link>
+             </Button>
+             <Button variant="outline" size="lg" asChild>
+               <Link href="/services">Web Dev Services</Link>
              </Button>
           </div>
         </div>
       </section>
 
-      {/* BENTO GRID */}
-        <BentoGrid />
+      {/* --- BENTO GRID --- */}
+      <BentoGrid />
 
     </main>
   );

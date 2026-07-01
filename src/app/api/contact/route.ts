@@ -6,7 +6,7 @@ export async function POST(request: Request) {
     const body = await request.json();
 
     // Attach the access key here on the server
-    const access_key = process.env.WEB3FORMS_ACCESS_KEY;
+    const access_key = process.env.WEB3FORM_ACCESS_KEY;
 
     const payload = {
       ...body,

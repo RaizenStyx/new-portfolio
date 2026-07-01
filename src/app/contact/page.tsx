@@ -18,28 +18,23 @@ export default function ContactPage() {
     setLoading(true);
     
     const form = e.currentTarget; 
+
     const formData = new FormData(form);
-    
-    // Convert FormData to a standard JSON object
-    const data = Object.fromEntries(formData.entries());
+    formData.append("access_key", "4b746dab-88e4-4e3d-98a2-96263a26240d"); 
 
     try {
-      // Point the fetch call to your new local API route
-      const response = await fetch("/api/contact", {
+      const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
+        body: formData,
       });
 
-      const result = await response.json();
+      const data = await response.json();
 
-      if (result.success) {
+      if (data.success) {
         setSuccess(true);
         form.reset(); 
       } else {
-        console.error("Error:", result);
+        console.error("Error:", data);
         alert("Something went wrong. Please try again.");
       }
     } catch (error) {

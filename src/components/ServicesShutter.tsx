@@ -41,12 +41,11 @@ const serviceData = [
     subheading: "Highlight Expertise",
     text: "Stop scrolling through your phone to find past work. A dedicated portfolio lets you show pristine before-and-after photos and reviews.",
     // image: "/images/mockups/mockup-4.jpg",
-    buttonText: "View Lawn Care Example",
-    link: "https://client-template-two.vercel.app/"
+    buttonText: "View Art Work Example",
+    link: "https://memorial-gallery.vercel.app/"
   },
 ];
 
-// Data for E-Commerce & Retail (No links provided, so buttons will hide automatically)
 const ecommerceData = [
   {
     id: 1,

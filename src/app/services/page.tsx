@@ -2,6 +2,7 @@
 import ServicesShutter from "@/components/ServicesShutter";
 import Link from "next/link";
 import { Metadata } from "next";
+import TestimonialMarquee from "@/components/TestimonialMarquee";
 
 export const metadata: Metadata = {
   title: "Web Design Services",
@@ -24,8 +25,13 @@ export default function ServicesPage() {
       </section>
 
       {/* The Interactive Tabbed Shutter */}
-      <section className="w-full px-4 mb-24">
+      <section className="w-full px-4">
         <ServicesShutter />
+      </section>
+
+      {/* The Testimonials Section */}
+      <section className="w-full">
+        <TestimonialMarquee />
       </section>
 
       {/* Final Call to Action */}

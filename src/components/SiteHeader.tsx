@@ -29,7 +29,14 @@ export function SiteHeader() {
         
         {/* LEFT: LOGO */}
         <Link href="/" className="flex items-center space-x-2">
-          <span className="text-xl font-bold tracking-tight">Connor Reed</span>
+        <Image 
+          src="/images/logo.png"
+          alt="Connor Reed Logo"
+          width={90}
+          height={90}
+          className="w-auto h-12 object-contain transition-transform hover:scale-105 duration-200 ease-in-out rounded-md"
+        />
+        <span className="text-xl font-bold tracking-tight">Connor Reed</span>
         </Link>
 
         {/* CENTER: DESKTOP NAV (Hidden on Mobile) */}

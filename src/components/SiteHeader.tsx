@@ -25,7 +25,7 @@ export function SiteHeader() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex h-16 items-center justify-between px-4">
+      <div className="flex h-16 items-center justify-between px-4 lg:px-15 ">
         
         {/* LEFT: LOGO */}
         <Link href="/" className="flex items-center space-x-2">
@@ -40,7 +40,7 @@ export function SiteHeader() {
         </Link>
 
         {/* CENTER: DESKTOP NAV (Hidden on Mobile) */}
-        <div className="hidden md:flex">
+        <div className="hidden lg:flex">
           <NavigationMenu>
             <NavigationMenuList>
               
@@ -123,7 +123,7 @@ export function SiteHeader() {
                     <Link href="/about">About</Link>
                 </NavigationMenuLink>
               </NavigationMenuItem>
-
+              {/* SERVICES LINK */}
               <NavigationMenuItem>
                 <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
                     <Link href="/services">Services</Link>
@@ -133,6 +133,14 @@ export function SiteHeader() {
             </NavigationMenuList>
           </NavigationMenu>
         </div>
+
+          <div className="flex items-center gap-2 text-sm text-muted-foreground hidden lg:flex">
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+            </span>
+            Open to new opportunities
+          </div>
 
         {/* RIGHT: ACTIONS */}
         <div className="flex items-center gap-2">
@@ -172,7 +180,7 @@ export function SiteHeader() {
           {/* MOBILE MENU (SHEET) */}
           <Sheet open={open} onOpenChange={setOpen}>
             <SheetTrigger asChild>
-              <Button variant="ghost" size="icon" className="md:hidden">
+              <Button variant="ghost" size="icon" className="lg:hidden">
                 <Menu className="h-5 w-5" />
                 <span className="sr-only">Toggle Menu</span>
               </Button>
@@ -238,6 +246,13 @@ export function SiteHeader() {
                     <Link href="tel:+4233675437">
                     <Icons.phone className="h-6 w-6 text-muted-foreground hover:text-foreground" />
                     </Link>
+                </div>
+                <div className="flex items-center gap-2 text-sm text-muted-foreground mt-6">
+                  <span className="relative flex h-2 w-2">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                    <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+                  </span>
+                  Open to new opportunities
                 </div>
               </div>
             </SheetContent>

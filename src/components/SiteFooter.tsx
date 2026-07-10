@@ -80,15 +80,11 @@ export function SiteFooter() {
 
            {/* COL 4: LEGAL / STATUS */}
            <div className="flex flex-col gap-4">
-            <h3 className="font-semibold text-foreground">Status</h3>
-             <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
-                </span>
-                Open to new opportunities
-             </div>
-             <p className="text-xs text-muted-foreground mt-auto">
+            <h3 className="font-semibold text-foreground">Legal</h3>
+             <Link href="/privacy" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                Privacy Policy
+             </Link>
+             <p className="text-xs text-muted-foreground leading-relaxed">
                 © {new Date().getFullYear()} Connor Reed. <br />
                 Built with Next.js 16 & Tailwind.
              </p>
